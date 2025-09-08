@@ -11,7 +11,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                @livewire('search-group-members-for-edit-group')
+                <livewire:search-group-members-for-edit-group />
                 <button class="btn btn-primary mt-1 btn-add-members-to-group mt-3" data-group-id=""
                         data-loading-text="<span class='spinner-border spinner-border-sm'></span> Processing...">
                     {{__('messages.chats.add_to_group')}}

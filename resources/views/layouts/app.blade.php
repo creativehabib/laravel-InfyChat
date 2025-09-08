@@ -25,7 +25,7 @@
     @if(getLoggedInUser()->is_subscribed)
         @include('layouts.one_signal')
     @endif
-    @livewireStyles
+    <livewire:styles />
     @routes
     <link rel="stylesheet" href="{{ mix('assets/css/font-awesome.css') }}">
     <link rel="stylesheet" href="{{ asset('css/emojionearea.min.css') }}">
@@ -208,7 +208,7 @@
 <script src="{{ mix('assets/js/set_user_status.js') }}"></script>
 <script src="{{ mix('assets/js/set-user-on-off.js') }}"></script>
 <script src="{{mix('assets/js/profile.js')}}"></script>
-@livewireScripts
+<livewire:scripts />
 @stack('scripts')
 @yield('scripts')
 </html>

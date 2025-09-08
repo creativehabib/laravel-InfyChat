@@ -83,7 +83,7 @@
                     <div class="col-sm-12">
                         {!! Form::label('users', __('messages.group.members'),['class' => 'login-group__sub-title']).":" !!}
                         <span class="red">*</span>
-                        @livewire('search-group-members-for-create-group')
+                        <livewire:search-group-members-for-create-group />
                     </div>
                 </div>
                 <div class="row mt-2">
