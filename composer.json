@@ -61,11 +61,9 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
-        },
-        "classmap": [
-            "packages/flash/src"
-        ]
+            "Database\\Seeders\\": "database/seeders/",
+            "Laracasts\\Flash\\": "packages/flash/src/"
+        }
     },
     "autoload-dev": {
         "psr-4": {
