@@ -225,6 +225,7 @@ return [
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Flash' => Laracasts\Flash\Flash::class,
         'Image' => Intervention\Image\Facades\Image::class,
+        'Form' => App\Support\Form::class,
         'OneSignal' => Berkayk\OneSignal\OneSignalFacade::class,
         'Redis' => Illuminate\Support\Facades\Redis::class,
         'Socialite' => \Laravel\Socialite\Facades\Socialite::class,
