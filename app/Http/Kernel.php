@@ -2,7 +2,6 @@
 
 namespace App\Http;
 
-use App\Http\Middleware\CheckUserIsActivated;
 use App\Http\Middleware\SendMessage;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -62,7 +61,6 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        'user.activated' => CheckUserIsActivated::class,
         'role' => \Spatie\Permission\Middleware\RoleMiddleware::class,
         'permission' => \Spatie\Permission\Middleware\PermissionMiddleware::class,
         'role_or_permission' => \Spatie\Permission\Middleware\RoleOrPermissionMiddleware::class,
