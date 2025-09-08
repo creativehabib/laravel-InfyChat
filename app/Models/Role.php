@@ -202,24 +202,27 @@ class Role extends Model implements RoleContract
      * Determine if the user may perform the given permission.
      *
      * @param  string|Permission  $permission
+     * @param  string|null  $guardName
      * @return bool
      *
      * @throws GuardDoesNotMatch
      */
-    public function hasPermissionTo($permission): bool
+    public function hasPermissionTo($permission, ?string $guardName = null): bool
     {
+        $guardName = $guardName ?? $this->getDefaultGuardName();
+
         if (config('permission.enable_wildcard_permission', false)) {
-            return $this->hasWildcardPermission($permission, $this->getDefaultGuardName());
+            return $this->hasWildcardPermission($permission, $guardName);
         }
 
         $permissionClass = $this->getPermissionClass();
 
         if (is_string($permission)) {
-            $permission = $permissionClass->findByName($permission, $this->getDefaultGuardName());
+            $permission = $permissionClass->findByName($permission, $guardName);
         }
 
         if (is_int($permission)) {
-            $permission = $permissionClass->findById($permission, $this->getDefaultGuardName());
+            $permission = $permissionClass->findById($permission, $guardName);
         }
 
         if (! $this->getGuardNames()->contains($permission->guard_name)) {
