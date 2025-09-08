@@ -152,19 +152,19 @@
                         <div class="tab-content search-any-member mt-3" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-my-contacts" role="tabpanel"
                                  aria-labelledby="nav-my-contacts-tab">
-                                @livewire('my-contacts-search', ['myContactIds' => $myContactIds, 'blockUserIds' => $blockUserIds])
+                                <livewire:my-contacts-search :my-contact-ids="$myContactIds" :block-user-ids="$blockUserIds" />
                             </div>
                             <div class="tab-pane fade" id="nav-users" role="tabpanel" aria-labelledby="nav-users-tab">
-                                @livewire('search-users', ['myContactIds' => $myContactIds, 'blockUserIds' => $blockUserIds])
+                                <livewire:search-users :my-contact-ids="$myContactIds" :block-user-ids="$blockUserIds" />
                             </div>
                             @if($enableGroupSetting == 1)
                             <div class="tab-pane fade" id="nav-groups" role="tabpanel" aria-labelledby="nav-groups-tab">
-                                @livewire('group-search')
+                                <livewire:group-search />
                             </div>
                             @endif
                             <div class="tab-pane fade show" id="nav-blocked-users" role="tabpanel"
                                  aria-labelledby="nav-blocked-users-tab">
-                                @livewire('blocked-user-search', ['blockedByMeUserIds' => $blockedByMeUserIds])
+                                <livewire:blocked-user-search :blocked-by-me-user-ids="$blockedByMeUserIds" />
                             </div>
                         </div>
                     </div>
