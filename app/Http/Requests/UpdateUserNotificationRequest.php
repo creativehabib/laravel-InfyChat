@@ -2,12 +2,12 @@
 
 namespace App\Http\Requests;
 
-use InfyOm\Generator\Request\APIRequest;
+use Illuminate\Foundation\Http\FormRequest;
 
 /**
  * Class UpdateUserNotificationRequest
  */
-class UpdateUserNotificationRequest extends APIRequest
+class UpdateUserNotificationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
