@@ -22,21 +22,21 @@
                             <h1 class="login-group__title mb-2">{{ __('messages.register') }}</h1>
                             <p class="text-muted login-group__sub-title mb-3">{{ __('messages.create_your_account') }}</p>
                             <div class="form-group mb-4 login-group__sub-title">
-                                {!! Form::label('name', __('messages.full_name').':' )!!}<span class="red">*</span>
+                                <label for="name">{{ __('messages.full_name') }}:</label><span class="red">*</span>
                                 <input type="text"
                                        class="form-control login-group__input"
                                        name="name" value="{{ old('name') }}"
                                        placeholder="{{ __('messages.full_name') }}" id="name" required>
                             </div>
                             <div class="form-group mb-4 login-group__sub-title">
-                                {!! Form::label('email', __('messages.email').':' )!!}<span class="red">*</span>
+                                <label for="email">{{ __('messages.email') }}:</label><span class="red">*</span>
                                 <input type="email"
                                        class="form-control login-group__input"
                                        name="email" value="{{ old('email') }}" placeholder="{{ __('messages.email') }}"
                                        id="email" required>
                             </div>
                             <div class="form-group mb-4 login-group__sub-title">
-                                {!! Form::label('password', __('messages.password').':' )!!}<span class="red">*</span>
+                                <label for="password">{{ __('messages.password') }}:</label><span class="red">*</span>
                                 <i class="fa fa-question-circle ms-2 question-type-open cursor-pointer"
                                    data-bs-toggle="tooltip" data-bs-placement="top"
                                    title="Minimum 8 character required, White space is not allowed"></i>
@@ -46,7 +46,7 @@
                                        onkeypress="return avoidSpace(event)" required>
                             </div>
                             <div class="form-group mb-4 login-group__sub-title">
-                                {!! Form::label('confirm_password', __('messages.confirm_password').':' )!!}<span
+                                <label for="password_confirmation">{{ __('messages.confirm_password') }}:</label><span
                                     class="red">*</span>
                                 <i class="fa fa-question-circle ms-2 question-type-open cursor-pointer"
                                    data-bs-toggle="tooltip" data-bs-placement="top"
