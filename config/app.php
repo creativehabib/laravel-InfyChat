@@ -193,7 +193,6 @@ return [
         /*
          * Package Service Providers...
          */
-        Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         InfyOmGeneratorServiceProvider::class,
         // CoreUITemplatesServiceProvider::class,
@@ -228,8 +227,6 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'Flash' => Laracasts\Flash\Flash::class,
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,
         'OneSignal' => Berkayk\OneSignal\OneSignalFacade::class,
         'Redis' => Illuminate\Support\Facades\Redis::class,
