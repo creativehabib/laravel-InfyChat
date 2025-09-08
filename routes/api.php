@@ -11,6 +11,7 @@ use App\Http\Controllers\API\UserAPIController;
 use Illuminate\Broadcasting\BroadcastController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\CheckUserIsActivated;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +35,7 @@ Route::post('password/reset', [PasswordResetController::class, 'sendResetPasswor
 Route::post('password/update', [PasswordResetController::class, 'reset']);
 Route::get('activate', [AuthAPIController::class, 'verifyAccount']);
 
-Route::middleware(['auth:api', 'user.activated'])->group(function () {
+Route::middleware(['auth:api', CheckUserIsActivated::class])->group(function () {
     Route::post('broadcasting/auth', [BroadcastController::class, 'authenticate']);
     Route::get('logout', [AuthAPIController::class, 'logout']);
 
@@ -62,7 +63,7 @@ Route::middleware(['auth:api', 'user.activated'])->group(function () {
     Route::post('social-login/{provider}', [SocialAuthAPIController::class, 'socialLogin'])->middleware('web');
 });
 
-Route::middleware(['role:Admin', 'auth:api', 'user.activated'])->group(function () {
+Route::middleware(['role:Admin', 'auth:api', CheckUserIsActivated::class])->group(function () {
     Route::resource('users', AdminUsersAPIController::class);
     Route::post('users/{user}/update', [AdminUsersAPIController::class, 'update']);
     Route::post('users/{user}/active-de-active', [AdminUsersAPIController::class, 'activeDeActiveUser'])

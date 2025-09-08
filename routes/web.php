@@ -13,6 +13,7 @@ use App\Http\Controllers\SettingsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FrontCMSController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\CheckUserIsActivated;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,7 +40,7 @@ Route::post('update-language', [UserController::class, 'updateLanguage'])->middl
 Route::get('/users/impersonate-logout',
     [UserController::class, 'userImpersonateLogout'])->name('impersonate.userLogout');
 
-Route::middleware(['user.activated', 'auth'])->group(function () {
+Route::middleware([CheckUserIsActivated::class, 'auth'])->group(function () {
     //view routes
     Route::get('/conversations',
         [ChatController::class, 'index'])->name('conversations')->middleware('permission:manage_conversations');
@@ -114,7 +115,7 @@ Route::middleware(['user.activated', 'auth'])->group(function () {
 });
 
 // users
-Route::middleware(['permission:manage_users', 'auth', 'user.activated'])->group(function () {
+Route::middleware(['permission:manage_users', 'auth', CheckUserIsActivated::class])->group(function () {
     Route::resource('users', UserController::class);
     Route::post('users/{user}/active-de-active', [UserController::class, 'activeDeActiveUser'])
         ->name('active-de-active-user');
@@ -126,24 +127,24 @@ Route::middleware(['permission:manage_users', 'auth', 'user.activated'])->group(
 });
 
 // roles
-Route::middleware(['permission:manage_roles', 'auth', 'user.activated'])->group(function () {
+Route::middleware(['permission:manage_roles', 'auth', CheckUserIsActivated::class])->group(function () {
     Route::resource('roles', RoleController::class)->except('update');
     Route::post('roles/{role}/update', [RoleController::class, 'update'])->name('roles.update');
 });
 
 // settings
-Route::middleware(['permission:manage_settings', 'auth', 'user.activated'])->group(function () {
+Route::middleware(['permission:manage_settings', 'auth', CheckUserIsActivated::class])->group(function () {
     Route::get('settings', [SettingsController::class, 'index'])->name('settings.index');
     Route::post('settings', [SettingsController::class, 'update'])->name('settings.update');
 });
 
 // reported-users
-Route::middleware(['permission:manage_reported_users', 'auth', 'user.activated'])->group(function () {
+Route::middleware(['permission:manage_reported_users', 'auth', CheckUserIsActivated::class])->group(function () {
     Route::resource('reported-users', ReportUserController::class);
 });
 
 // meetings
-Route::middleware(['permission:manage_meetings', 'auth', 'user.activated'])->group(function () {
+Route::middleware(['permission:manage_meetings', 'auth', CheckUserIsActivated::class])->group(function () {
     Route::resource('meetings', MeetingController::class);
     Route::get('meetings/{meeting}/change-status/{status}',
         [MeetingController::class, 'changeMeetingStatus'])->name('meeting.change-meeting-status');
@@ -155,7 +156,7 @@ Route::middleware('web')->group(function () {
     Route::get('login/{provider}/callback', [SocialAuthController::class, 'callback']);
 });
 
-Route::middleware(['permission:manage_front_cms', 'auth', 'user.activated'])->group(function () {
+Route::middleware(['permission:manage_front_cms', 'auth', CheckUserIsActivated::class])->group(function () {
     Route::get('front-cms', [FrontCMSController::class, 'frontCms'])->name('front.cms');
     Route::post('front-cms', [FrontCMSController::class, 'updateFrontCms'])->name('front.cms.update');
 });
