@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Facade;
 // use InfyOm\CoreUITemplates\CoreUITemplatesServiceProvider;
-use InfyOm\Generator\InfyOmGeneratorServiceProvider;
 
 return [
 
@@ -194,7 +193,6 @@ return [
          * Package Service Providers...
          */
         Laracasts\Flash\FlashServiceProvider::class,
-        InfyOmGeneratorServiceProvider::class,
         // CoreUITemplatesServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
