@@ -18,7 +18,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            @include('coreui-templates::common.errors')
+                            @include('layouts.errors')
                             <form method="post" action="{{ route('meetings.store') }}" id="meetingForm">
                                 {{ csrf_field() }}
                                 <div class="row">
