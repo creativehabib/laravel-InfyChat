@@ -79,7 +79,7 @@
                 </div>
                 <div class="row mt-3">
                     <div class="col-sm-12 text-start">
-                        {!! Form::button(__('messages.save'), ['type'=>'submit','class' => 'btn btn-primary','id'=>'btnEditGroup','data-loading-text' => "<span class='spinner-border spinner-border-sm'></span> Processing..."]) !!}
+                        {!! Form::button(__('messages.save'), ['type'=>'submit','class' => 'btn btn-primary','id'=>'btnEditGroup','data-loading-text' => "<span class='spinner-border spinner-border-sm'></span> " . __('messages.processing')]) !!}
                         <button type="button" class="btn btn-secondary ms-1"
                                 data-bs-dismiss="modal">{{ __('messages.chats.cancel') }}
                         </button>

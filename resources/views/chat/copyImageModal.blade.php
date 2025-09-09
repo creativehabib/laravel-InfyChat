@@ -15,8 +15,8 @@
                     {{__('messages.chats.cancel')}}
                 </button>
                 <button class="btn btn-success me-1 pull-right mt-3" data-group-id="" id="sendImages"
-                        data-loading-text="<span class='spinner-border spinner-border-sm'></span> Processing...">
-                    {{__('messages.chats.send')}}
+                        data-loading-text="<span class='spinner-border spinner-border-sm'></span> {{ __('messages.processing') }}">
+                    {{ __('messages.chats.send') }}
                 </button>
             </div>
         </div>
