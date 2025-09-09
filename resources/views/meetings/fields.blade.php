@@ -62,7 +62,7 @@
 
 <div class="form-group col-sm-12 login-group__sub-title">
     {!! Form::label('agenda',__('messages.meeting.description').':')!!}<span class="red">*</span>
-    {{ Form::textarea('agenda', null, ['class' => 'form-control login-group__input', 'required','placeholder'=>__('messages.meeting.description')]) }}
+    {!! Form::textarea('agenda', null, ['class' => 'form-control login-group__input', 'required','placeholder'=>__('messages.meeting.description')]) !!}
 </div>
 
 <div class="form-group col-sm-12 mb-0">
