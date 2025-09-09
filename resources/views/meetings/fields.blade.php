@@ -66,7 +66,9 @@
 </div>
 
 <div class="form-group col-sm-12 mb-0">
-    {{ Form::button(__('messages.save') , ['type'=>'submit','class' => 'btn btn-primary me-1','id'=>'btnSave','data-loading-text'=>"<span class='spinner-border spinner-border-sm'></span> " .__('messages.processing')]) }}
-    <a href="{{ route('meetings.index') }}"
-            class="btn btn-secondary">{{ __('messages.cancel') }}</a>
+    <button type="submit" class="btn btn-primary me-1" id="btnSave"
+            data-loading-text="<span class='spinner-border spinner-border-sm'></span> {{ __('messages.processing') }}">
+        {{ __('messages.save') }}
+    </button>
+    <a href="{{ route('meetings.index') }}" class="btn btn-secondary">{{ __('messages.cancel') }}</a>
 </div>
