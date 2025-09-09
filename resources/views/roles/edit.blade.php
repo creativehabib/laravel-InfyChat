@@ -18,7 +18,7 @@
                             </div>
                         </div>
                         <div class="card-body py-sm-3 py-1">
-                            @include('coreui-templates::common.errors')
+                            @include('layouts.errors')
                             {{ Form::model($role, ['route' => ['roles.update', $role->id], 'method' => 'post', 'id' => 'editRoleForm']) }}
                             {{ csrf_field() }}
                             <div class="row mb-sm-0 mb-1">

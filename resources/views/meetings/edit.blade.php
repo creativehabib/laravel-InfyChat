@@ -18,7 +18,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            @include('coreui-templates::common.errors')
+                            @include('layouts.errors')
                                 {{ Form::model($meeting, ['route' => ['meetings.update', $meeting->id], 'method' => 'put', 'id'=>'meetingForm']) }}
                                 {{ csrf_field() }}
                                 <div class="row">

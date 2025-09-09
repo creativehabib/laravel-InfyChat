@@ -89,7 +89,7 @@ return [
     |
     */
 
-    'templates' => 'coreui-templates',
+    'templates' => 'infyom-generator-templates',
 
     /*
     |--------------------------------------------------------------------------
