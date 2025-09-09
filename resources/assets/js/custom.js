@@ -9,7 +9,13 @@
                 const $this = $(this);
                 if (action === 'loading') {
                     $this.data('original-text', $this.html());
-                    $this.html($this.data('loading-text')).prop('disabled', true);
+                    let loadingText = $this.data('loading-text');
+                    if (loadingText && loadingText.indexOf('&') !== -1) {
+                        const textarea = document.createElement('textarea');
+                        textarea.innerHTML = loadingText;
+                        loadingText = textarea.value;
+                    }
+                    $this.html(loadingText).prop('disabled', true);
                 } else if (action === 'reset') {
                     $this.html($this.data('original-text')).prop('disabled', false);
                 }
