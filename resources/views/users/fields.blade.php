@@ -123,7 +123,7 @@
     </div>
     <!-- Submit Field -->
     <div class="text-start form-group col-sm-12">
-        {{ Form::button(__('messages.save') , ['type'=>'submit','class' => 'btn btn-primary','id'=>'createBtnSave','data-loading-text'=>"<span class='spinner-border spinner-border-sm'></span> " .__('messages.processing')]) }}
+        {!! Form::button(__('messages.save') , ['type'=>'submit','class' => 'btn btn-primary primary-btn','id'=>'btnCreateRole','data-loading-text'=>"<span class='spinner-border spinner-border-sm'></span> " .__('messages.processing')]) !!}
         <button type="button" class="btn btn-secondary ms-1" data-bs-dismiss="modal">{{ __('messages.cancel') }}</button>
     </div>
 </div>

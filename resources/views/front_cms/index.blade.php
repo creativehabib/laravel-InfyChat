@@ -334,7 +334,9 @@
                                 </div>
 
                                 <div class="form-group mt-3">
-                                    {{ Form::button(__('messages.save') , ['type'=>'submit', 'id' => 'btnSave', 'class' => 'btn btn-primary me-1','data-loading-text'=>"<span class='spinner-border spinner-border-sm'></span> " .__('messages.processing')]) }}
+                                    <button type="submit" class="btn btn-primary me-1" id="btnSave" data-loading-text="<span class='spinner-border spinner-border-sm'></span> {{ __('messages.processing') }}">
+                                        {{ __('messages.save') }}
+                                    </button>
                                 </div>
                             </form>
                         </div>

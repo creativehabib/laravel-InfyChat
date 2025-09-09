@@ -20,8 +20,8 @@
                                placeholder="{{ __('messages.whats_your_status') }}...">
                     </div>
                     <div class="col-sm-12 my-2 p-0 text-start">
-                        {{ Form::button(__('messages.save') , ['type'=>'button','class' => 'btn btn-primary','id'=>'setUserStatus', 'data-loading-text'=>"<span class='spinner-border spinner-border-sm'></span> " .__('messages.processing')]) }}
-                        {{ Form::button(__('messages.partials.clear_status') , ['type'=>'button','class' => 'btn btn-secondary','id'=>'clearUserStatus', 'data-loading-text'=>"<span class='spinner-border spinner-border-sm'></span> " .__('messages.processing')]) }}
+                        {!! Form::button(__('messages.save') , ['type'=>'button','class' => 'btn btn-primary','id'=>'setUserStatus','data-loading-text'=>"<span class='spinner-border spinner-border-sm'></span> " .__('messages.processing')]) !!}
+                        {!! Form::button(__('messages.partials.clear_status') , ['type'=>'button','class' => 'btn btn-secondary','id'=>'clearUserStatus', 'data-loading-text'=>"<span class='spinner-border spinner-border-sm'></span> " .__('messages.processing')]) !!}
                     </div>
                 </div>
             </div>

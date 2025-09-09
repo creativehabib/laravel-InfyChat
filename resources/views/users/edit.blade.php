@@ -119,9 +119,8 @@
                     </div>
                     <!-- Submit Field -->
                     <div class="text-start form-group mb-0 col-sm-12">
-                        {{ Form::button(__('messages.save') , ['type'=>'submit','class' => 'btn btn-primary','id'=>'editBtnSave','data-loading-text'=>"<span class='spinner-border spinner-border-sm'></span> " .__('messages.processing')]) }}
-                        <button type="button" class="btn btn-secondary ms-1"
-                                data-bs-dismiss="modal">{{ __('messages.cancel') }}</button>
+                        {!! Form::button(__('messages.save') , ['type'=>'submit','class' => 'btn btn-primary primary-btn','id'=>'btnCreateRole','data-loading-text'=>"<span class='spinner-border spinner-border-sm'></span> " .__('messages.processing')]) !!}
+                        <button type="button" class="btn btn-secondary ms-1" data-bs-dismiss="modal">{{ __('messages.cancel') }}</button>
                     </div>
                 </div>
             </div>
