@@ -27,9 +27,8 @@ $('.time-zone').select2({
 $('#meetingForm').on('submit', function (event) {
     event.preventDefault();
     let loadingButton = jQuery(this).find('#btnSave');
-    loadingButton.button('loading');
+    loadingButton.prop('disabled', true);
+    loadingButton.html(loadingButton.data('loading-text'));
 
     $('#meetingForm')[0].submit();
-
-    return true;
 });
