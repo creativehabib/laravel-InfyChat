@@ -1,3 +1,30 @@
+
+/**
+ * Lightweight replacement for Bootstrap's deprecated jQuery button plugin.
+ * It toggles a loading state on buttons by swapping the HTML and disabling
+ * the element. Call with "loading" to show the loader and "reset" to revert.
+ */
+(function ($) {
+    $.fn.button = function (action) {
+        return this.each(function () {
+            const $self = $(this);
+            if (action === 'loading') {
+                const loadingText = $self.attr('data-loading-text');
+                if (loadingText) {
+                    $self.data('original-text', $self.html())
+                        .html(loadingText)
+                        .prop('disabled', true);
+                }
+            } else if (action === 'reset') {
+                const originalText = $self.data('original-text');
+                if (originalText) {
+                    $self.html(originalText).prop('disabled', false);
+                }
+            }
+        });
+    };
+}(jQuery));
+
 // Bootstrap 5 removed jQuery's button plugin. Define minimal replacement
 // to toggle loading states for buttons that specify a data-loading-text
 // attribute. This enables calls like `loadingButton.button('loading')`
@@ -17,6 +44,7 @@
         };
     }
 })(jQuery);
+
 
 window.displayToastr = function (heading, icon, message) {
     $.toast({
