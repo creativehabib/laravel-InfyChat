@@ -22,8 +22,8 @@
                         {{__('messages.cancel')}}
                     </button>
                     <button class="btn btn-primary me-1 pull-right" data-group-id="" id="reportUser"
-                            data-loading-text="<span class='spinner-border spinner-border-sm'></span> Processing...">
-                        {{__('messages.report')}}
+                            data-loading-text="<span class='spinner-border spinner-border-sm'></span> {{ __('messages.processing') }}">
+                        {{ __('messages.report') }}
                     </button>
                 </div>
             </div>
