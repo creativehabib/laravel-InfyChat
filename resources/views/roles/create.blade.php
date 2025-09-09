@@ -19,13 +19,12 @@
                         </div>
                         <div class="card-body py-sm-3 py-1">
                             @include('layouts.errors')
-                            {{ Form::open(['id'=>'createRoleForm', 'route' => 'roles.store', 'method' => 'post']) }}
-                                {{ csrf_field() }}
+                            {!! Form::open(['id' => 'createRoleForm', 'route' => 'roles.store', 'method' => 'post']) !!}
                                 <div class="row mb-sm-0 mb-1">
                                     @include('roles.fields')
                                 </div>
 
-                            {{ Form::close() }}
+                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>

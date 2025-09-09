@@ -19,13 +19,12 @@
                         </div>
                         <div class="card-body py-sm-3 py-1">
                             @include('layouts.errors')
-                            {{ Form::model($role, ['route' => ['roles.update', $role->id], 'method' => 'post', 'id' => 'editRoleForm']) }}
-                            {{ csrf_field() }}
+                            {!! Form::model($role, ['route' => ['roles.update', $role->id], 'method' => 'post', 'id' => 'editRoleForm']) !!}
                             <div class="row mb-sm-0 mb-1">
                                 @include('roles.edit_fields')
                             </div>
 
-                            {{ Form::close() }}
+                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>
