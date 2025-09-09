@@ -51,7 +51,6 @@
     }
 })(jQuery);
 
-
 window.displayToastr = function (heading, icon, message) {
     $.toast({
         heading: heading,
