@@ -6,7 +6,7 @@
     {{ Form::text('name', null, ['class' => 'form-control login-group__input', 'id' => 'role_name', 'required','placeholder'=>__('messages.name')]) }}
 </div>
 <div class="form-group col-md-6 col-sm-12">
-    {{ Form::label('permissions', __('messages.permissions').':', ['class' => 'login-group__sub-title']) }}<span class="red">*</span>
+    {{ Form::label('permissions', __('messages.permissions').':', ['class' => 'login-group__sub-title']) }}
     <br>
     <div class="row px-3">
         @foreach($permissions->get() as $permission)
