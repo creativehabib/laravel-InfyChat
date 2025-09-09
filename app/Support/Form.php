@@ -2,6 +2,7 @@
 
 namespace App\Support;
 
+use Illuminate\Support\Collection;
 use function csrf_field;
 use function route;
 use function url;
@@ -114,7 +115,7 @@ class Form
             .'</textarea>';
     }
 
-    public static function select(string $name, array $list = [], $selected = null, array $options = []): string
+    public static function select(string $name, array|Collection $list = [], $selected = null, array $options = []): string
     {
         $attr = self::attributes($options);
         $multiple = isset($options['multiple']) || in_array('multiple', $options, true);
