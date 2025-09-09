@@ -9,7 +9,7 @@
 {{ Form::label('permissions', __('messages.permissions').':', ['class' => 'login-group__sub-title']) }}
 <br>
 <div class="row px-3">
-    @foreach($permissions->get() as $permission)
+    @foreach($permissions as $permission)
         <div class="custom-control custom-checkbox mb-2">
             <input id="{{ $permission->name }}" class="custom-control-input not-checkbox role-permission"
                    type="checkbox" name="permissions[]"

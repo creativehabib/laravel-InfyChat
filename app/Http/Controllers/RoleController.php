@@ -48,7 +48,7 @@ class RoleController extends AppBaseController
      */
     public function create()
     {
-        $permissions = Permission::toBase();
+        $permissions = Permission::orderBy('display_name')->get();
 
         return view('roles.create', compact('permissions'));
     }
@@ -87,7 +87,7 @@ class RoleController extends AppBaseController
         if ($role->is_default) {
             return redirect()->back();
         }
-        $permissions = Permission::toBase();
+        $permissions = Permission::orderBy('display_name')->get();
 
         return view('roles.edit', compact('permissions', 'role'));
     }
