@@ -1,3 +1,23 @@
+// Bootstrap 5 removed jQuery's button plugin. Define minimal replacement
+// to toggle loading states for buttons that specify a data-loading-text
+// attribute. This enables calls like `loadingButton.button('loading')`
+// and `loadingButton.button('reset')` to work across the app.
+(function ($) {
+    if (!$.fn.button) {
+        $.fn.button = function (action) {
+            return this.each(function () {
+                const $this = $(this);
+                if (action === 'loading') {
+                    $this.data('original-text', $this.html());
+                    $this.html($this.data('loading-text')).prop('disabled', true);
+                } else if (action === 'reset') {
+                    $this.html($this.data('original-text')).prop('disabled', false);
+                }
+            });
+        };
+    }
+})(jQuery);
+
 window.displayToastr = function (heading, icon, message) {
     $.toast({
         heading: heading,
