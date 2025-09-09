@@ -12,7 +12,10 @@ class FlashServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton('flash', function ($app) {
-            return new FlashNotifier($app['session']);
+            // The session binding resolves to the session manager which does not
+            // satisfy the type-hint of the flash notifier. Resolve the actual
+            // session store implementation instead.
+            return new FlashNotifier($app['session.store']);
         });
     }
 
